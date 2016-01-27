@@ -4,8 +4,6 @@ import java.util.EventObject;
 
 public class DieEvent extends EventObject {
 
-	private static final long serialVersionUID = 1L;
-
 	private String text;
 
 	public DieEvent(Object source, String output) {

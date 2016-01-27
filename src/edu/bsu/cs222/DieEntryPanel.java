@@ -15,8 +15,6 @@ import javax.swing.event.EventListenerList;
 
 public class DieEntryPanel extends JPanel {
 
-	private static final long serialVersionUID = 1L;
-
 	private EventListenerList listenerList = new EventListenerList();
 
 	public DieEntryPanel() {

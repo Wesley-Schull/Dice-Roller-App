@@ -8,8 +8,6 @@ import javax.swing.JTextArea;
 
 public class MainFrame extends JFrame {
 
-	private static final long serialVersionUID = 1L;
-
 	public MainFrame(String title) {
 		super(title);
 
