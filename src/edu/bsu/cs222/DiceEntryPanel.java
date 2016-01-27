@@ -12,9 +12,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.event.EventListenerList;
 
-public class DieEntryPanel extends JPanel {
+public class DiceEntryPanel extends JPanel {
 	private EventListenerList listenerList = new EventListenerList();
-	public DieEntryPanel() {
+	public DiceEntryPanel() {
 		Dimension size = getPreferredSize();
 		size.width = 250;
 		setPreferredSize(size);
@@ -32,7 +32,7 @@ public class DieEntryPanel extends JPanel {
 				int faces = Integer.parseInt(facesField.getText());
 				Dice userDice = new Dice(rolls, faces);
 				String result = userDice.roll();
-				activateDieEvent(new DieEvent(this, result));
+				activateDiceEvent(new DiceEvent(this, result));
 			}
 		});
 		setLayout(new GridBagLayout());
@@ -61,18 +61,18 @@ public class DieEntryPanel extends JPanel {
 		gc.gridy = 4;
 		add(rollButton, gc);
 	}
-	public void activateDieEvent(DieEvent rollAction) {
+	public void activateDiceEvent(DiceEvent rollAction) {
 		Object[] listOfListeners = listenerList.getListenerList();
 		for (int i = 0; i < listOfListeners.length; i += 2) {
-			if (listOfListeners[i] == DieListener.class) {
-				((DieListener) listOfListeners[i + 1]).dieEventOccurred(rollAction);
+			if (listOfListeners[i] == DiceListener.class) {
+				((DiceListener) listOfListeners[i + 1]).diceEventOccurred(rollAction);
 			}
 		}
 	}
-	public void addDieListener(DieListener listener) {
-		listenerList.add(DieListener.class, listener);
+	public void addDiceListener(DiceListener listener) {
+		listenerList.add(DiceListener.class, listener);
 	}
-	public void removeDieListener(DieListener listener) {
-		listenerList.remove(DieListener.class, listener);
+	public void removeDiceListener(DiceListener listener) {
+		listenerList.remove(DiceListener.class, listener);
 	}
 }

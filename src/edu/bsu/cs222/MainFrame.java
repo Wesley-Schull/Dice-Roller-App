@@ -9,9 +9,9 @@ public class MainFrame extends JFrame {
 	public MainFrame(String title) {
 		super(title);
 		final JTextArea textArea = new JTextArea();
-		DieEntryPanel diePanel = new DieEntryPanel();
-		diePanel.addDieListener(new DieListener() {
-			public void dieEventOccurred(DieEvent roll) {
+		DiceEntryPanel dicePanel = new DiceEntryPanel();
+		dicePanel.addDiceListener(new DiceListener() {
+			public void diceEventOccurred(DiceEvent roll) {
 				String rollResult = roll.getOutput();
 				textArea.setText(rollResult);
 			}
@@ -19,6 +19,6 @@ public class MainFrame extends JFrame {
 		setLayout(new BorderLayout());
 		Container container = getContentPane();
 		container.add(textArea, BorderLayout.CENTER);
-		container.add(diePanel, BorderLayout.WEST);
+		container.add(dicePanel, BorderLayout.WEST);
 	}
 }
