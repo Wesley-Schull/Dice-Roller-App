@@ -1,16 +1,19 @@
 package edu.bsu.cs222;
 public class Dice {
-	public int rolls;
-	public int faces;
+	private int rolls;
+	private int faces;
 	public Dice(int rolls, int faces) {
 		this.rolls = rolls;
 		this.faces = faces;
 	}
-	public String roll() {
+	String roll() {
 		String result = "";
-		for (int i = 0; i < rolls; i++) {
-			result += "Roll #" + (i + 1) + ":\t" + (int)((Math.random() * faces) + 1) + "\n";
+		for (int counter = 0; counter < rolls; counter++) {
+			result += "Roll #" + (counter + 1) + ":\t" + generateRandomNumber(faces) + "\n";
 		}
 		return result;
+	}
+	private int generateRandomNumber(int factor){
+		return (int) ((Math.random() * factor) + 1);
 	}
 }

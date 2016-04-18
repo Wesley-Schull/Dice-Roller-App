@@ -12,9 +12,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.event.EventListenerList;
 
-public class DiceEntryPanel extends JPanel {
+class DiceEntryPanel extends JPanel {
 	private EventListenerList listenerList = new EventListenerList();
-	public DiceEntryPanel() {
+	DiceEntryPanel() {
 		Dimension size = getPreferredSize();
 		size.width = 250;
 		setPreferredSize(size);
@@ -28,9 +28,7 @@ public class DiceEntryPanel extends JPanel {
 		final JTextField facesField = new JTextField(10);
 		rollButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent roll) {
-				int rolls = Integer.parseInt(rollsField.getText());
-				int faces = Integer.parseInt(facesField.getText());
-				Dice userDice = new Dice(rolls, faces);
+				Dice userDice = new Dice(Integer.parseInt(rollsField.getText()), Integer.parseInt(facesField.getText()));
 				String result = userDice.roll();
 				activateDiceEvent(new DiceEvent(this, result));
 			}
@@ -61,7 +59,7 @@ public class DiceEntryPanel extends JPanel {
 		gc.gridy = 4;
 		add(rollButton, gc);
 	}
-	public void activateDiceEvent(DiceEvent rollAction) {
+	private void activateDiceEvent(DiceEvent rollAction) {
 		Object[] listOfListeners = listenerList.getListenerList();
 		for (int i = 0; i < listOfListeners.length; i += 2) {
 			if (listOfListeners[i] == DiceListener.class) {
