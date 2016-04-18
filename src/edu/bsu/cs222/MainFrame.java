@@ -5,8 +5,8 @@ import java.awt.Container;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 
-public class MainFrame extends JFrame {
-	public MainFrame(String title) {
+class MainFrame extends JFrame {
+	MainFrame(String title) {
 		super(title);
 		final JTextArea textArea = new JTextArea();
 		DiceEntryPanel dicePanel = new DiceEntryPanel();

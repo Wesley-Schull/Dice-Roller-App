@@ -1,8 +1,7 @@
 package edu.bsu.cs222;
-
 public class Dice {
-	public int faces;
 	public int rolls;
+	public int faces;
 	public Dice(int rolls, int faces) {
 		this.rolls = rolls;
 		this.faces = faces;
@@ -13,11 +12,5 @@ public class Dice {
 			result += "Roll #" + (i + 1) + ":\t" + (int)((Math.random() * faces) + 1) + "\n";
 		}
 		return result;
-	}
-	public int getFaces() {
-		return faces;
-	}
-	public int getRolls() {
-		return rolls;
 	}
 }
