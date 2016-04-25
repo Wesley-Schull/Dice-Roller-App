@@ -70,7 +70,4 @@ class DiceEntryPanel extends JPanel {
 	public void addDiceListener(DiceListener listener) {
 		listenerList.add(DiceListener.class, listener);
 	}
-	public void removeDiceListener(DiceListener listener) {
-		listenerList.remove(DiceListener.class, listener);
-	}
 }
