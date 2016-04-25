@@ -13,9 +13,10 @@ import javax.swing.JTextField;
 import javax.swing.event.EventListenerList;
 
 class DiceEntryPanel extends JPanel {
+	Dimension size;
 	private EventListenerList listenerList = new EventListenerList();
 	DiceEntryPanel() {
-		Dimension size = getPreferredSize();
+		size = getPreferredSize();
 		size.width = 250;
 		setPreferredSize(size);
 		setBorder(BorderFactory.createTitledBorder("Roll (number of dice) D (number of faces)"));
