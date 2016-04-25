@@ -6,7 +6,7 @@ public class Dice {
 		this.rolls = rolls;
 		this.faces = faces;
 	}
-	String roll() {
+	public String roll() {
 		String result = "";
 		for (int counter = 0; counter < rolls; counter++) {
 			result += "Roll #" + (counter + 1) + ":\t" + generateRandomNumber(faces) + "\n";
